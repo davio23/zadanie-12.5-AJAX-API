@@ -10,26 +10,24 @@ function getQuote() {
 
 function createTweet(input) {
     var data = input[0];
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
     var quoteText = $(data.content).text().trim();
     var quoteAuthor = data.title;
+    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
     if (!quoteAuthor.length) {
         quoteAuthor = "Unknown author";
+        $('.tweet').attr('href', tweet);
     }
-    $('.tweet').attr('href', tweet);
-}
-if (tweetText.length > 140) {
+  
+  if (tweetText.length > 140) {
     getQuote();
-}
-
-if (tweetText.length > 140) {
-    getQuote();
-} else {
-    var prefix = "https://cors-anywhere.herokuapp.com/";
-    var tweet = tweetLink + encodeURIComponent(tweetText);
-    $('.quote').text(quoteText);
-    $('.author').text("Author: " + quoteAuthor);
-    $('.tweet').attr('href', tweet);
+  } else {
+      var prefix = "https://cors-anywhere.herokuapp.com/";
+      var tweet = tweetLink + encodeURIComponent(tweetText);
+      $('.quote').text(quoteText);
+      $('.author').text("Author: " + quoteAuthor);
+      $('.tweet').attr('href', tweet);
+  }
+    
 }
 
 $(document).ready(function () {
