@@ -1,0 +1,21 @@
+html, main {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #1993d1;
+    text-align: center;   
+    color: white;
+}
+.quote {
+    font-size: 30px;
+    margin-top: 15%;
+    color: white;
+}
+button {
+    border 1px solid white;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
